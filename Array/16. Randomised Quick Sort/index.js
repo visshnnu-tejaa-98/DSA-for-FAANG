@@ -16,8 +16,9 @@ const partition = (arr, p, q) => {
 };
 
 const randomPartition = (arr, p, q) => {
-  let randomNumber =
-    Number(`${Math.random() * arr.length - 1}`.split(".")[0]) + p;
+  let randomNumber = Math.floor(
+    Number(`${Math.random() * arr.length - 1}`.split(".")[0])
+  );
   return partition(arr, randomNumber, q);
 };
 
