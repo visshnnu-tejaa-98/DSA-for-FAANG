@@ -1,7 +1,7 @@
 const mergeProcess = (left, right) => {
-  let result = [];
   let i = 0;
   let j = 0;
+  let result = [];
   while (i < left.length && j < right.length) {
     if (left[i] < right[j]) {
       result.push(left[i]);
@@ -23,8 +23,8 @@ const mergeProcess = (left, right) => {
 };
 
 const mergeSort = (arr) => {
-  if (arr.length <= 1) return arr;
-  let mid = arr.length / 2;
+  if (arr.length < 2) return arr;
+  let mid = Math.floor(arr.length / 2);
   let left = mergeSort(arr.slice(0, mid));
   let right = mergeSort(arr.slice(mid));
   return mergeProcess(left, right);
@@ -33,5 +33,5 @@ const mergeSort = (arr) => {
 let arr = [10, 20, 30, 40, 11, 21, 31, 41];
 let i = 0;
 let j = arr.length - 1;
-let result = mergeSort(arr, i, j);
+let result = mergeSort(arr);
 console.log(result);
