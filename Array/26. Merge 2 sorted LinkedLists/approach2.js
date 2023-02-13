@@ -12,30 +12,6 @@ class SLL {
     this.length = 0;
   }
 
-  lengthLL() {
-    let curr = this.head;
-    let index = 0;
-    while (curr) {
-      curr = curr.next;
-      index++;
-    }
-    return index;
-  }
-
-  push(val) {
-    let newNode = new Node(val);
-    if (!this.head) {
-      this.head = newNode;
-      this.tail = newNode;
-    } else {
-      let curr = this.head;
-      while (curr.next !== null) {
-        curr = curr.next;
-      }
-      curr.next = newNode;
-    }
-  }
-
   traverse() {
     let curr = this.head;
     let arr = [];
@@ -44,19 +20,6 @@ class SLL {
       curr = curr.next;
     }
     console.log(arr);
-  }
-
-  get(idx) {
-    if (!this.head) {
-      return;
-    }
-    let index = 0;
-    let curr = this.head;
-    while (index < idx) {
-      curr = curr.next;
-      index++;
-    }
-    return curr.val;
   }
 }
 
@@ -96,8 +59,6 @@ function merge(l1, l2) {
     res.next = merge(l1, l2.next);
   }
   return res;
-  // console.log(l1, l2);
 }
 l3.head = merge(l1.head, l2.head);
 l3.traverse();
-// console.log(l3);
